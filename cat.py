@@ -2,16 +2,35 @@ from PIL import Image
 
 asciiCharacters = ["B", "S", "#", "&", "@", "$", "%", "*", "!", ":", "."]
 
-class OutputAsciiLordNermal():
-    def asciiNermal(self):
-        image = Image.open('/Users/ebruozel/Desktop/Schule 2 Year/Python/CatProj/assets/lord_nermal.jpeg')
-        width, height = image.size
+
+class Cat():
+    def __init__(self, image, txt):
+        self.image = image
+        self.txt = txt
+        
+    def get_image(self):
+        return str(self.image)
+    def set_image(self,image):
+        self.image = image
+
+    def get_txt(self):
+        return str(self.txt)
+    def set_txt(self, txt):
+        self.txt = txt
+
+    def pathImage(self, str):
+        self.image = Image.open(str)
+        return self.image
+
+    def ascii(self):
+        self.image
+        width, height = self.image.size
         aspect_ratio = height/width
         new_width = 140
         new_height = aspect_ratio * new_width * 0.55
-        image = image.resize((new_width, int(new_height)))
-        ascii_art = convertToAsciiArt(image)
-        saveAsText(ascii_art)
+        self.image = self.image.resize((new_width, int(new_height)))
+        ascii_art = convertToAsciiArt(self.image)
+        saveAsText(self, ascii_art)
 
 def convertToAsciiArt(image):
     ascii_art = []
@@ -32,11 +51,10 @@ def convertPixelToCharacter(pixel):
     index = int(pixel_brightness * brightness_weight) - 1
     return asciiCharacters[index]
 
-def saveAsText(ascii_art):
-    with open("lord_nermal.txt", "w") as file:
+def saveAsText(self, ascii_art):
+    with open(self.txt, "w") as file:
         for line in ascii_art:
             file.write(line)
             file.write('\n')
+            # print(line + '\n')
         file.close()
-            
-    
