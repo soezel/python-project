@@ -13,15 +13,15 @@ class MemeCat():
 class Input():     
     def userInput(self):
         outputBongo = OutputAscii(" ", " ")
-        outputBongo.image = outputBongo.pathImage("assets/bongo_cat.jpeg")
+        outputBongo.image = outputBongo.pathImage("cat-project/assets/bongo_cat.jpeg")
         outputBongo.txt = "bongo_cat.txt"
 
         outputNyan = OutputAscii(" ", " ")
-        outputNyan.image = outputNyan.pathImage("assets/nyan_cat.jpeg")
+        outputNyan.image = outputNyan.pathImage("cat-project/assets/nyan_cat.jpeg")
         outputNyan.txt = "nyan_cat.txt"
 
         outputNermal = OutputAscii(" ", " ")
-        outputNermal.image = outputNermal.pathImage("assets/lord_nermal.jpeg")
+        outputNermal.image = outputNermal.pathImage("cat-project/assets/lord_nermal.jpeg")
         outputNermal.txt = "lord_nermal.txt"
 
         print("\nPlease Choose from these options to see in Ascii Art \nand don't forget to write the names right (o'ω'o):")
