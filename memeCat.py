@@ -2,28 +2,26 @@
 ### Input von User 
 ### Ausgabe in txt
 
-
 from outputAscii import OutputAscii
 from printing import printIndividually, printingGreeting
  
 class MemeCat():
-    def main (self):
-        
+    def cat (self):
         printingGreeting()
         Input().userInput()
         
 class Input():     
     def userInput(self):
         outputBongo = OutputAscii(" ", " ")
-        outputBongo.image = outputBongo.pathImage("/Users/ebruozel/Desktop/Schule 2 Year/Python/CatProj/assets/bongo_cat.jpeg")
+        outputBongo.image = outputBongo.pathImage("assets/bongo_cat.jpeg")
         outputBongo.txt = "bongo_cat.txt"
 
         outputNyan = OutputAscii(" ", " ")
-        outputNyan.image = outputNyan.pathImage("/Users/ebruozel/Desktop/Schule 2 Year/Python/CatProj/assets/nyan_cat.jpeg")
+        outputNyan.image = outputNyan.pathImage("assets/nyan_cat.jpeg")
         outputNyan.txt = "nyan_cat.txt"
 
         outputNermal = OutputAscii(" ", " ")
-        outputNermal.image = outputNermal.pathImage("/Users/ebruozel/Desktop/Schule 2 Year/Python/CatProj/assets/nyan_cat.jpeg")
+        outputNermal.image = outputNermal.pathImage("assets/lord_nermal.jpeg")
         outputNermal.txt = "lord_nermal.txt"
 
         print("\nPlease Choose from these options to see in Ascii Art \nand don't forget to write the names right (o'ω'o):")
@@ -39,4 +37,4 @@ class Input():
             printIndividually("You typed the name wrong… ¯\_(ツ)_/¯\n")
 
 if __name__ == '__main__':
-        MemeCat().main()
+        MemeCat().cat()
