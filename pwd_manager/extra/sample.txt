@@ -1,0 +1,66 @@
+def main():
+
+    lege_Datenbank_an()
+
+
+    while(True):
+        print("----------------")
+        print("Passwortmanager")
+        print("----------------")
+        print("1. Passwort speichern")
+        print("2. Passwort anzeigen")
+        print("3. Programm beenden")
+        print("----------------")
+        print("Bitte wählen Sie eine Option aus: ", end="")
+        option = input()
+        if option == "1":
+            passwort_speichern()
+            
+        elif option == "2":
+            password_anzeigen()
+
+        elif option == "3":
+            print("----------------")
+            print("Programm wird beendet!")
+            print("----------------")
+            programm_beenden()
+        elif option == "4":
+            datenbank_ausgeben()
+        else:
+            print("Ungültige Eingabe!")
+   
+
+
+def lege_Datenbank_an():
+    print("Speichere das Programm")     
+            
+    with open("FI-A-Passwortmanager.txt", "w") as mein_datei_handle:
+        mein_datei_handle.write("-----------------------------------------\n")
+        mein_datei_handle.write("Index Name Passwort Text\n")
+        mein_datei_handle.write("-----------------------------------------\n")
+
+
+def datenbank_ausgeben():
+    print("Zeige das Passwort an")
+    with open("FI-A-Passwortmanager.txt", "r") as mein_datei_handle:
+        print(mein_datei_handle.read())
+
+
+#Option 1
+def passwort_speichern(index="1",name="Max",password="123",notiz="Test"):
+    with open("FI-A-Passwortmanager.txt", "a") as mein_datei_handle:
+        mein_datei_handle.write("{0},{1},{2},{3}\n".format(index,name,password,notiz))
+
+    pass
+
+#Option 2
+def password_anzeigen():
+
+    pass
+
+#Option 3
+def programm_beenden():
+    print("Beende Passwortmanager.")
+    return
+
+main()

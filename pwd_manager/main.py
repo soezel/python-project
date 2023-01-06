@@ -1,23 +1,25 @@
 from database_print import *
-from new_database import *
-from show_database import *
-from output_pwd import Output_pwd
+from save_password import *
+from create_database import *
+# from show_database import *
+# from output_pwd import Output_pwd
 
-class Passwordmanager():
-    def main():
+class main():
+    create_database()
+    def pwd_manager():
         pwd_block()
-        pwd_database()
+        manage_password()
         option = input("Auswahl:")
         match option:
             case "1":
-                New_database().new()
+                save_password()
         
-class Input():
-    def new_name():
-        pwd_controller = Output_pwd(" ")
-        pwd_controller.txt = input("Bitte den Namen der Datenbank eingeben: ")
-        Show_database().show()
+# class Input():
+#     def new_name():
+        # pwd_controller = Output_pwd(" ")
+        # pwd_controller.txt = input("Bitte den Namen der Datenbank eingeben: ")
+        # Show_database().show()
  
 
 if __name__ == '__main__':
-    Passwordmanager.main()
+    main.pwd_manager()
