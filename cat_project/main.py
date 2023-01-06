@@ -5,7 +5,7 @@
 from outputAscii import OutputAscii
 from printing import printIndividually, printingGreeting
  
-class MemeCat():
+class main():
     def cat (self):
         printingGreeting()
         Input().userInput()
@@ -37,4 +37,4 @@ class Input():
             printIndividually("You typed the name wrong… ¯\_(ツ)_/¯\n")
 
 if __name__ == '__main__':
-        MemeCat().cat()
+        main().cat()
