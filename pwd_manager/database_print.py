@@ -9,5 +9,5 @@ def pwd_database():
     # print("Auswahl:")
 
 def manage_password():
-    print("1) Neues Passwort anlegen\n2) Existierende Passwörter anzeigen\n3) Passwort aktualisieren\n4) Passwort löschen\n5) Beenden")
+    print("1) Neues Passwort anlegen\n2) Passwörter anzeigen \n3) Passwort löschen\n4) Beenden")
     # print("Auswahl:")
