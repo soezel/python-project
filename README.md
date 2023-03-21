@@ -30,13 +30,13 @@
 --------------------------------------------------------------------
 # $$\text{\color{lightgreen}Done ↓}$$ 
 #
-> $\text{...}$
+> ⚖️ $\text{BMI \ Calculator}$
+> ➗ $\text{normal \ Calculator}$
 --------------------------------------------------------------------
 # $$\text{\color{lightgreen}To-Do ↓}$$ 
 --------------------------------------------------------------------
 + 🔒 $\text{Password \ manager}$
 + 🍪 $\text{Cookie \ Clicker}$
-+ ⚖️ $\text{BMI \ Calculator}$
 + ➗ $\text{normal \ Calculator}$
 + ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
 + $\text{...}$
