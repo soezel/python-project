@@ -37,8 +37,16 @@
 
 #
 > ➗ $\text{normal \ Calculator} \ $ 
+<p align="center">
+  <img src="rechner\assets\taschenrechner.png" height="300" width="300">
+</p>
+
 #
 > ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
+<p align="center">
+  <img src="rechner\assets\heart.png" height="300" width="300">
+</p>
+
 --------------------------------------------------------------------
 # $$\text{\color{lightgreen}To-Do ↓}$$ 
 --------------------------------------------------------------------
