@@ -32,13 +32,14 @@
 
 > ⚖️ $\text{BMI \ Calculator} \ $
 #
-> ➗ $\text{normal \ Calculator}$ 
+> ➗ $\text{normal \ Calculator} \ $ 
+#
+> ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
 --------------------------------------------------------------------
 # $$\text{\color{lightgreen}To-Do ↓}$$ 
 --------------------------------------------------------------------
 + 🔒 $\text{Password \ manager}$
 + 🍪 $\text{Cookie \ Clicker}$
 + ➗ $\text{normal \ Calculator}$
-+ ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
 + $\text{...}$
 #
