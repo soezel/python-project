@@ -52,6 +52,5 @@
 --------------------------------------------------------------------
 + 🔒 $\text{Password \ manager}$
 + 🍪 $\text{Cookie \ Clicker}$
-+ ➗ $\text{normal \ Calculator}$
 + $\text{...}$
 #
