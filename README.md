@@ -5,7 +5,7 @@
 
 # $$\text{Collection \ of \ python \ projects}$$ 
 --------------------------------------------------------------------
-# $$\text{\color{lightgreen}So \ far \ ↓}$$
+# $$\text{\color{lightgreen}Presentable ↓}$$
 ## $$\text{Ascii \ art \ gallery \ for \ meme \ cats!}$$
 --------------------------------------------------------------------
 > ✨ $\text{Nyan \ Cat}$
@@ -28,8 +28,16 @@
 </p>
 
 --------------------------------------------------------------------
+# $$\text{\color{lightgreen}Done ↓}$$ 
+#
+> $\text{...}$
+--------------------------------------------------------------------
 # $$\text{\color{lightgreen}To-Do ↓}$$ 
 --------------------------------------------------------------------
 + 🔒 $\text{Password \ manager}$
++ 🍪 $\text{Cookie \ Clicker}$
++ ⚖️ $\text{BMI \ Calculator}$
++ ➗ $\text{normal \ Calculator}$
++ ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
 + $\text{...}$
 #
