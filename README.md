@@ -32,7 +32,7 @@
 
 > ⚖️ $\text{BMI \ Calculator} \ $
 <p align="center">
-  <img src="rechner\assets\bmi.png" height="500" width="300">
+  <img src="rechner\assets\bmi.png" height="300" width="300">
 </p>
 
 #
