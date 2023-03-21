@@ -32,8 +32,9 @@
 
 > ⚖️ $\text{BMI \ Calculator} \ $
 <p align="center">
-  <img src="rechner\assets\bmi.png" height="850" width="650">
+  <img src="rechner\assets\bmi.png" height="500" width="300">
 </p>
+
 #
 > ➗ $\text{normal \ Calculator} \ $ 
 #
