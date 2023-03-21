@@ -31,6 +31,9 @@
 # $$\text{\color{lightgreen}Done ↓}$$ 
 
 > ⚖️ $\text{BMI \ Calculator} \ $
+<p align="center">
+  <img src="rechner\assets\bmi.png" height="850" width="650">
+</p>
 #
 > ➗ $\text{normal \ Calculator} \ $ 
 #
