@@ -38,6 +38,7 @@ def derivs(t, state):
 
     return dydx
 
+
 # create a time array from 0..t_stop sampled at 0.02 second steps
 dt = 0.01
 t = np.arange(0, t_stop, dt)
@@ -101,5 +102,5 @@ ani = animation.FuncAnimation(
     fig, animate, len(y), interval=dt*1000, blit=True)
 
 plt.gcf()
-plt.savefig('Kundenauftrag3.png',dpi=30)
+plt.savefig('auftrag/assets/Kundenauftrag3.png', dpi=30)
 plt.show()

@@ -33,5 +33,5 @@ ax.set_xlabel("X position [m]")
 ax.set_ylabel("Y position [m]")
 
 plt.gcf()
-plt.savefig('Kundenauftrag1.png',dpi=30)
+plt.savefig('auftrag/assets/Kundenauftrag1.png', dpi=30)
 plt.show()

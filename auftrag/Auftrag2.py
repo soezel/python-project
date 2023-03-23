@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-code = np.array([1 ,0,0,0, 1,1 ,0,0,0, 1,1,1 ,0,0,0, 1,1,1,1])
+code = np.array([1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1])
 # code = np.array([
 #     1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1,
 #     0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0,
@@ -19,5 +19,5 @@ ax.imshow(code.reshape(1, -1), cmap='binary', aspect='auto',
           interpolation='nearest')
 
 plt.gcf()
-plt.savefig('Kundenauftrag2.png',dpi=30)
+plt.savefig('auftrag/assets/Kundenauftrag2.png', dpi=30)
 plt.show()
