@@ -9,13 +9,16 @@ $\text{Selin \ und \ Tamara}$
 + Pixel Art
 + 2D
 
-> $\text{Genre}$
+> $\text{Genre / Thema}$
 + Jump n Run
++ Ingame Währung - Smarakt
++ Whisper, Ghost & Ginger sind nur mit Smarakten käuflich
 
 > $\text{character building}$
-+ Stern (Tamaras Char)
-+ Ghost (Selins Char)
-+ Lebkuchenmann 
++ Anfnangschar Kacke - Poop
++ Käuflich mit ingame Smarakte: Stern (Tamaras Char) - Luma
++ Käuflich mit ingame Smarakte: Ghost (Selins Char) - Whisper
++ Käuflich mit ingame Smarakte: Lebkuchenmann - Ginger
 + auswahl zwischen vorgefertigte Character 
    
 > $\text{Gegner}$
