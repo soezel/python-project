@@ -101,5 +101,5 @@ ani = animation.FuncAnimation(
     fig, animate, len(y), interval=dt*1000, blit=True)
 
 plt.gcf()
-plt.savefig('Kundenauftrag3.png',dpi=30)
+plt.savefig('matplot/Kundenauftrag3.png',dpi=30)
 plt.show()

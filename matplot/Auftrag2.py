@@ -19,5 +19,5 @@ ax.imshow(code.reshape(1, -1), cmap='binary', aspect='auto',
           interpolation='nearest')
 
 plt.gcf()
-plt.savefig('Kundenauftrag2.png',dpi=30)
+plt.savefig('matplot/Kundenauftrag2.png',dpi=30)
 plt.show()
