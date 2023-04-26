@@ -1,5 +1,5 @@
 
-$\text{Selin \ und \ Tamara}$#
+$\text{Selin \ und \ Tamara}$
 
 weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit
 # $$\text{Projektarbeit \ für \ das \ Game}$$
