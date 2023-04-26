@@ -1,6 +1,7 @@
 
-$\text{Selin \ und \ Tamara}$
-$\text{weitere \ updates \ auf \ dem \ repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit}$
+$\text{Selin \ und \ Tamara}$#
+
+$\text{weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit}$
 # $$\text{Projektarbeit \ für \ das \ Game}$$
 --------------------------------------------------------------------
 > $\text{Brainstorming}$
