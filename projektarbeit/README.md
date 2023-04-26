@@ -24,3 +24,4 @@ $\text{Selin \ und \ Tamara}$
 > $\text{Gegner}$
 + siehe Screenshots
 + verschiedenfarbige Oktopoden mit anderen formen
++ endgegner ist Großes Herz
