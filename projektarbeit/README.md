@@ -5,7 +5,7 @@ weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/mai
 # $$\text{Projektarbeit \ für \ das \ Game}$$
 --------------------------------------------------------------------
 > $\text{Brainstorming}$
-+ Game für Windows und Mac (pygame bzw pygame zero)
++ Game für Windows und Mac (pygame bzw pygame zero, Arcade)
 + executable mit freeze
 + character building
 + Pixel Art
