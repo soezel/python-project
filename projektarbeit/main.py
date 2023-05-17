@@ -13,6 +13,7 @@ pygame.display.set_caption("Frenzy: Battle Against Octopods Invasion")
 X_POSITION, Y_POSITION = 400, 660
 
 jumping = False
+game_over = False
 
 # Physikalische Variablen
 Y_GRAVITY = 0.6
@@ -39,8 +40,16 @@ STEP_SIZE = 0.01
 CHARACTER_SPEED = 0.3
 ENEMY_SPEED = 3  # Geschwindigkeit des Gegners
 
+# Funktion zur Kollisionsprüfung
+def check_collision():
+    global game_over
+    character_rect = pygame.Rect(X_POSITION, Y_POSITION, STANDING_SURFACE.get_width(), STANDING_SURFACE.get_height())
+    enemy_rect = pygame.Rect(enemy_x, enemy_y, ENEMY_SURFACE.get_width(), ENEMY_SURFACE.get_height())
+    if character_rect.colliderect(enemy_rect):
+        game_over = True
+
 # Endlosschleife
-while True:
+while not game_over:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -89,6 +98,21 @@ while True:
     if enemy_x + ENEMY_SURFACE.get_width() < 0:
         enemy_x = random.randint(800, 1600)
 
+    # Kollisionsprüfung
+    check_collision()
+
     # Pygame Fenster aktualisieren
     pygame.display.update()
     CLOCK.tick(60)
+
+# Spiel vorbei, zeige Game Over Nachricht
+game_over_font = pygame.font.Font(None, 64)
+game_over_text = game_over_font.render("Game Over", True, (255, 0, 0))
+game_over_rect = game_over_text.get_rect(center=(400, 400))
+SCREEN.blit(game_over_text, game_over_rect)
+pygame.display.update()
+
+# Warte einige Sekunden, bevor das Spiel beendet wird
+pygame.time.wait(3000)
+pygame.quit()
+sys.exit()
