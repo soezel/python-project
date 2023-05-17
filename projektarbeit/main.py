@@ -23,7 +23,7 @@ Y_VELOCITY = JUMP_HEIGHT
 # Bilder laden und skalieren
 STANDING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200))
 JUMPING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (200, 200))
-BACKGROUND = pygame.image.load("projektarbeit/assets/background.png")
+BACKGROUND = pygame.transform.scale(pygame.image.load("projektarbeit/assets/background.png"), (600, 780))
 BACKGROUND_WIDTH = BACKGROUND.get_width()
 background_position = 0
 
