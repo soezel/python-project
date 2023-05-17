@@ -21,15 +21,15 @@ JUMP_HEIGHT = 20
 Y_VELOCITY = JUMP_HEIGHT
 
 # Bilder laden und skalieren
-STANDING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (150, 150))
-JUMPING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (150, 150))
-BACKGROUND = pygame.image.load("projektarbeit/assets/background.png")
+STANDING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200))
+JUMPING_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (200, 200))
+BACKGROUND = pygame.transform.scale(pygame.image.load("projektarbeit/assets/background.png"), (600, 780))
 BACKGROUND_WIDTH = BACKGROUND.get_width()
 background_position = 0
 
 # Gegner laden und skalieren
-ENEMY_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (150, 150))
-enemy_x = random.randint(100, 1600)  # Zufällige X-Position des Gegners
+ENEMY_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (200, 200))
+enemy_x = random.randint(800, 1600)  # Zufällige X-Position des Gegners
 enemy_y = Y_POSITION - ENEMY_SURFACE.get_height()  # Y-Position des Gegners (gleich wie Charakter)
 
 # Positionierung des Charakters
@@ -97,7 +97,6 @@ while not game_over:
     # Wenn Gegner den linken Bildschirmrand erreicht, setze ihn zufällig auf den rechten Rand
     if enemy_x + ENEMY_SURFACE.get_width() < 0:
         enemy_x = random.randint(800, 1600)
-        enemy_y = Y_POSITION - ENEMY_SURFACE.get_height()  # Aktualisiere Y-Position des Gegners
 
     # Kollisionsprüfung
     check_collision()
