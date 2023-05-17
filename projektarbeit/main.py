@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 
 pygame.init()
 
@@ -25,13 +26,18 @@ BACKGROUND = pygame.image.load("projektarbeit/assets/background.png")
 BACKGROUND_WIDTH = BACKGROUND.get_width()
 background_position = 0
 
-# Positionierung des Charakter
+# Gegner laden und skalieren
+ENEMY_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/gegner.png"), (64, 64))
+enemy_x = random.randint(800, 1600)  # Zufällige X-Position des Gegners
+enemy_y = Y_POSITION - ENEMY_SURFACE.get_height()  # Y-Position des Gegners (gleich wie Charakter)
+
+# Positionierung des Charakters
 rect = STANDING_SURFACE.get_rect(center=(X_POSITION, Y_POSITION))
 
 # Bewegungsgeschwindigkeiten
 STEP_SIZE = 0.01
 CHARACTER_SPEED = 0.3
-BACKGROUND_SPEED = 4
+ENEMY_SPEED = 3  # Geschwindigkeit des Gegners
 
 # Endlosschleife
 while True:
@@ -52,9 +58,10 @@ while True:
     # Hintergrundbild darstellen und bewegen
     SCREEN.blit(BACKGROUND, (background_position % BACKGROUND_WIDTH - BACKGROUND_WIDTH, 0))
     SCREEN.blit(BACKGROUND, (background_position % BACKGROUND_WIDTH, 0))
-    background_position -= BACKGROUND_SPEED
-    if background_position <= -BACKGROUND_WIDTH:
-        background_position = 0
+    background_position -= CHARACTER_SPEED * 4  # Hintergrundbewegungsgeschwindigkeit
+
+    # Gegner nach links bewegen
+    enemy_x -= ENEMY_SPEED
 
     # Wenn Charakter springt
     if jumping:
@@ -72,7 +79,15 @@ while True:
         SCREEN.blit(STANDING_SURFACE, mario_rect)
 
     # Charakter nach rechts bewegen
-    X_POSITION += STEP_SIZE * CHARACTER_SPEED
+    X_POSITION += CHARACTER_SPEED
+
+    # Gegner auf dem Bildschirm anzeigen
+    enemy_rect = ENEMY_SURFACE.get_rect(topleft=(enemy_x, enemy_y))
+    SCREEN.blit(ENEMY_SURFACE, enemy_rect)
+
+    # Wenn Gegner den linken Bildschirmrand erreicht, setze ihn zufällig auf den rechten Rand
+    if enemy_x + ENEMY_SURFACE.get_width() < 0:
+        enemy_x = random.randint(800, 1600)
 
     # Pygame Fenster aktualisieren
     pygame.display.update()
