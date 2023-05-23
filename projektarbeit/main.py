@@ -28,9 +28,13 @@ BACKGROUND_WIDTH = BACKGROUND.get_width()
 background_position = 0
 
 # Gegner laden und skalieren
-ENEMY_SURFACE = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (200, 200))
+ENEMY_SURFACE_1 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (200, 200))
+ENEMY_SURFACE_2 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar2.png"), (200, 200))
+enemy_images = [ENEMY_SURFACE_1, ENEMY_SURFACE_2]  # Liste mit den beiden Gegner-Bildern
+current_enemy_image_index = 0  # Aktueller Index des Gegner-Bildes
+enemy_image = enemy_images[current_enemy_image_index]
 enemy_x = random.randint(800, 1600)  # Zufällige X-Position des Gegners
-enemy_y = Y_POSITION - ENEMY_SURFACE.get_height()  # Y-Position des Gegners (gleich wie Charakter)
+enemy_y = Y_POSITION - enemy_image.get_height()  # Y-Position des Gegners (gleich wie Charakter)
 
 # Positionierung des Charakters
 rect = STANDING_SURFACE.get_rect(center=(X_POSITION, Y_POSITION))
@@ -44,9 +48,13 @@ ENEMY_SPEED = 3  # Geschwindigkeit des Gegners
 def check_collision():
     global game_over
     character_rect = pygame.Rect(X_POSITION, Y_POSITION, STANDING_SURFACE.get_width(), STANDING_SURFACE.get_height())
-    enemy_rect = pygame.Rect(enemy_x, enemy_y, ENEMY_SURFACE.get_width(), ENEMY_SURFACE.get_height())
+    enemy_rect = pygame.Rect(enemy_x, enemy_y, enemy_image.get_width(), enemy_image.get_height())
     if character_rect.colliderect(enemy_rect):
         game_over = True
+
+# Zeitverzögerung für die Animation des Gegners
+animation_delay = 200  # Verzögerung in Millisekunden
+last_animation_time = pygame.time.get_ticks()
 
 # Endlosschleife
 while not game_over:
@@ -90,12 +98,18 @@ while not game_over:
     # Charakter nach rechts bewegen
     X_POSITION += CHARACTER_SPEED
 
+    # Animation des Gegners
+    if pygame.time.get_ticks() - last_animation_time > animation_delay:
+        current_enemy_image_index = (current_enemy_image_index + 1) % len(enemy_images)
+        enemy_image = enemy_images[current_enemy_image_index]
+        last_animation_time = pygame.time.get_ticks()
+
     # Gegner auf dem Bildschirm anzeigen
-    enemy_rect = ENEMY_SURFACE.get_rect(topleft=(enemy_x, enemy_y))
-    SCREEN.blit(ENEMY_SURFACE, enemy_rect)
+    enemy_rect = enemy_image.get_rect(topleft=(enemy_x, enemy_y))
+    SCREEN.blit(enemy_image, enemy_rect)
 
     # Wenn Gegner den linken Bildschirmrand erreicht, setze ihn zufällig auf den rechten Rand
-    if enemy_x + ENEMY_SURFACE.get_width() < 0:
+    if enemy_x + enemy_image.get_width() < 0:
         enemy_x = random.randint(800, 1600)
 
     # Kollisionsprüfung
