@@ -21,8 +21,6 @@ jump_height = 20
 y_velocity = jump_height
 
 # Bilder laden und skalieren
-#standing_surface = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200))
-#jumping_surface = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (200, 200))
 background = pygame.transform.scale(pygame.image.load("projektarbeit/assets/background.png"), (600, 780))
 background_width = background.get_width()
 background_position = 0
@@ -35,7 +33,6 @@ current_enemy_image_index = 0  # Aktueller Index des Gegner-Bildes
 enemy_image = enemy_images[current_enemy_image_index]
 enemy_x = random.randint(800, 1600)  # Zufällige X-Position des Gegners
 enemy_y = y_position
-#- enemy_image.get_height()  # Y-Position des Gegners (gleich wie Charakter)
 
 # Spieler laden und skalieren
 player_surface_1 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200))
@@ -44,22 +41,26 @@ player_images = [player_surface_1, player_surface_2]  # Liste mit den beiden Spi
 current_player_image_index = 0  # Aktueller Index des Spieler-Bildes
 player_image = player_images[current_player_image_index]
 
-# Positionierung des Charakters
-#rect = standing_surface.get_rect(center=(x_position, y_position))
-
 # Bewegungsgeschwindigkeiten
-step_size = 0.01
 character_speed = 0.3
 enemy_speed = 3  # Geschwindigkeit des Gegners
 
-# Funktion zur Kollisionsprüfung
+
+# def check_collision():
+#     global game_over
+#     player_rect = player_image.get_rect(center=(x_position, y_position))
+#     enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
+#     if player_rect.colliderect(enemy_rect) and enemy_rect.right < player_rect.centerx:
+#         game_over = True
+        
 def check_collision():
     global game_over
-    character_rect = pygame.Rect(x_position, y_position, player_surface_1.get_width(), player_surface_1.get_height())
-    enemy_rect = pygame.Rect(enemy_x, enemy_y, enemy_image.get_width(), enemy_image.get_height())
-    if character_rect.colliderect(enemy_rect):
+    player_rect = player_image.get_rect(center=(x_position, y_position))
+    enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
+    if player_rect.right == enemy_rect.left or player_rect.left == enemy_rect.right:
         game_over = True
 
+        
 # Zeitverzögerung für die Animation des Gegners
 animation_delay = 200  # Verzögerung in Millisekunden
 last_animation_time = pygame.time.get_ticks()
@@ -87,7 +88,7 @@ while not game_over:
     # Hintergrundbild darstellen und bewegen
     screen.blit(background, (background_position % background_width - background_width, 0))
     screen.blit(background, (background_position % background_width, 0))
-    background_position -= character_speed * 4  # Hintergrundbewegungsgeschwindigkeit
+    background_position -= character_speed * 6 # Hintergrundbewegungsgeschwindigkeit
 
     # Gegner nach links bewegen
     enemy_x -= enemy_speed
@@ -100,12 +101,7 @@ while not game_over:
         if y_position > 660:
             jumping = False
             y_position = 660
-        #player_rect = player_image.get_rect(center=(x_position, y_position))
-        #screen.blit(player_image, player_rect)
-    #else:
-        # Wenn Charakter nicht springt, setze auf stehendes Bild
-         # player_rect = player_image.get_rect(center=(x_position, y_position))
-         # screen.blit(player_image, player_rect)
+
     # Charakter nach rechts bewegen
     x_position += character_speed
 
@@ -121,11 +117,11 @@ while not game_over:
         player_image = player_images[current_player_image_index]
         last_player_animation_time = pygame.time.get_ticks()
 
-    # Spieler auf dem Bildschirm anzeigen
+   # Spieler auf dem Bildschirm anzeigen
     player_rect = player_image.get_rect(center=(x_position, y_position))
     screen.blit(player_image, player_rect)
 
-    # Gegner auf dem Bildschirm anzeigen
+# Gegner auf dem Bildschirm anzeigen
     enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
     screen.blit(enemy_image, enemy_rect)
 
