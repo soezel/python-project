@@ -45,14 +45,7 @@ player_image = player_images[current_player_image_index]
 character_speed = 0.3
 enemy_speed = 3  # Geschwindigkeit des Gegners
 
-
-# def check_collision():
-#     global game_over
-#     player_rect = player_image.get_rect(center=(x_position, y_position))
-#     enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
-#     if player_rect.colliderect(enemy_rect) and enemy_rect.right < player_rect.centerx:
-#         game_over = True
-        
+# Funktion zur Kollisionsprüfung   
 def check_collision():
     global game_over
     player_rect = player_image.get_rect(center=(x_position, y_position))
