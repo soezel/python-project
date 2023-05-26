@@ -13,15 +13,15 @@ weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/mai
 
 > $\text{Genre / Thema}$
 + Jump n Run
-+ Ingame Währung - Smarakt
-+ Whisper, Ghost & Ginger sind nur mit Smarakten käuflich
++ Ingame Währung - smaragd
++ Whisper, Ghost & Ginger sind nur mit smaragd käuflich
 + evtl. einige springmöglichkeiten als eigenes objekt implementieren wegen der jump mechanik
 
 > $\text{character building}$
 + Anfnangschar Kacke - Poop
-+ Käuflich mit ingame Smarakte: Stern (Tamaras Char) - Luma
-+ Käuflich mit ingame Smarakte: Ghost (Selins Char) - Whisper
-+ Käuflich mit ingame Smarakte: Lebkuchenmann - Ginger
++ Käuflich mit ingame smaragd: Stern (Tamaras Char) - Luma
++ Käuflich mit ingame smaragd: Ghost (Selins Char) - Whisper
++ Käuflich mit ingame smaragd: Lebkuchenmann - Ginger
 + auswahl zwischen vorgefertigte Character 
 --------------------------------------------------------------------
 + Poop: Gesicht nur Augen (lang)
