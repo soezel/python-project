@@ -2,9 +2,87 @@ import pygame
 import sys
 import random
 
-pygame.init()
+class Player:
+    def __init__(self, x_position, y_position, speed):
+        self.x_position = x_position
+        self.y_position = y_position
+        self.jumping = False
+        self.y_gravity = 0.6
+        self.jump_height = 20
+        self.y_velocity = self.jump_height
+        self.speed = speed
 
-# Initialisieren des Pygame Fensters
+        self.images = [
+            pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200)),
+            pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (200, 200))
+        ]
+        self.current_image_index = 0
+        self.image = self.images[self.current_image_index]
+
+        self.player_animation_delay = 200  # Zeitverzögerung für die Animation des Spielers in Millisekunden
+        self.last_player_animation_time = pygame.time.get_ticks()
+
+    def jump(self):
+        if not self.jumping:
+            self.jumping = True
+            self.y_velocity = self.jump_height
+   
+    def update(self):
+        if self.jumping:
+            self.y_position -= self.y_velocity
+            self.y_velocity -= self.y_gravity
+            if self.y_position > 660:
+                self.jumping = False
+                self.y_position = 660
+
+        # Animation des Spielers
+        if pygame.time.get_ticks() - self.last_player_animation_time > self.player_animation_delay:
+            self.current_image_index = (self.current_image_index + 1) % len(self.images)
+            self.image = self.images[self.current_image_index]
+            self.last_player_animation_time = pygame.time.get_ticks()
+
+    def draw(self, screen):
+        player_rect = self.image.get_rect(center=(self.x_position, self.y_position))
+        screen.blit(self.image, player_rect)
+
+class Enemy:
+    def __init__(self, x_position, y_position):
+        self.x_position = x_position
+        self.y_position = y_position
+        self.speed = 3
+
+        self.images = [
+            pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (200, 200)),
+            pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar2.png"), (200, 200))
+        ]
+        self.current_image_index = 0
+        self.image = self.images[self.current_image_index]
+
+        self.animation_delay = 200  # Zeitverzögerung für die Animation des Gegners in Millisekunden
+        self.last_animation_time = pygame.time.get_ticks()
+
+    def update(self):
+        self.x_position -= self.speed
+
+        # Animation des Gegners
+        if pygame.time.get_ticks() - self.last_animation_time > self.animation_delay:
+            self.current_image_index = (self.current_image_index + 1) % len(self.images)
+            self.image = self.images[self.current_image_index]
+            self.last_animation_time = pygame.time.get_ticks()
+
+    def draw(self, screen):
+        enemy_rect = self.image.get_rect(center=(self.x_position, self.y_position))
+        screen.blit(self.image, enemy_rect)
+
+def check_collision(player, enemy):
+    player_rect = player.image.get_rect(center=(player.x_position, player.y_position))
+    enemy_rect = enemy.image.get_rect(center=(enemy.x_position, enemy.y_position))
+    if player_rect.right == enemy_rect.left or player_rect.left == enemy_rect.right:
+        return True
+    return False
+
+# Initialisieren des Pygame-Fensters
+pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((1000, 800))
 pygame.display.set_caption("Frenzy: Battle Against Octopods Invasion")
@@ -12,55 +90,15 @@ pygame.display.set_caption("Frenzy: Battle Against Octopods Invasion")
 # Position des Charakters
 x_position, y_position = 400, 660
 
-jumping = False
-game_over = False
-
-# Physikalische Variablen
-y_gravity = 0.6
-jump_height = 20
-y_velocity = jump_height
-
 # Bilder laden und skalieren
 background = pygame.transform.scale(pygame.image.load("projektarbeit/assets/background.png"), (600, 780))
 background_width = background.get_width()
 background_position = 0
 
-# Gegner laden und skalieren
-enemy_surface_1 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar1.png"), (200, 200))
-enemy_surface_2 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/oktar2.png"), (200, 200))
-enemy_images = [enemy_surface_1, enemy_surface_2]  # Liste mit den beiden Gegner-Bildern
-current_enemy_image_index = 0  # Aktueller Index des Gegner-Bildes
-enemy_image = enemy_images[current_enemy_image_index]
-enemy_x = random.randint(800, 1600)  # Zufällige X-Position des Gegners
-enemy_y = y_position
+player = Player(x_position, y_position, 0.3)
+enemy = Enemy(random.randint(800, 1600), y_position)
 
-# Spieler laden und skalieren
-player_surface_1 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma1.png"), (200, 200))
-player_surface_2 = pygame.transform.scale(pygame.image.load("projektarbeit/assets/luma2.png"), (200, 200))
-player_images = [player_surface_1, player_surface_2]  # Liste mit den beiden Spieler-Bildern
-current_player_image_index = 0  # Aktueller Index des Spieler-Bildes
-player_image = player_images[current_player_image_index]
-
-# Bewegungsgeschwindigkeiten
-character_speed = 0.3
-enemy_speed = 3  # Geschwindigkeit des Gegners
-
-# Funktion zur Kollisionsprüfung   
-def check_collision():
-    global game_over
-    player_rect = player_image.get_rect(center=(x_position, y_position))
-    enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
-    if player_rect.right == enemy_rect.left or player_rect.left == enemy_rect.right:
-        game_over = True
-
-        
-# Zeitverzögerung für die Animation des Gegners
-animation_delay = 200  # Verzögerung in Millisekunden
-last_animation_time = pygame.time.get_ticks()
-
-# Zeitverzögerung für die Animation des Spielers
-player_animation_delay = 200  # Verzögerung in Millisekunden
-last_player_animation_time = pygame.time.get_ticks()
+game_over = False
 
 # Endlosschleife
 while not game_over:
@@ -74,56 +112,26 @@ while not game_over:
 
     # Wenn Leertaste gedrückt wird, starte Sprung
     if keys_pressed[pygame.K_SPACE]:
-        if not jumping:
-            jumping = True
-            y_velocity = jump_height
+        player.jump()
 
     # Hintergrundbild darstellen und bewegen
     screen.blit(background, (background_position % background_width - background_width, 0))
     screen.blit(background, (background_position % background_width, 0))
-    background_position -= character_speed * 6 # Hintergrundbewegungsgeschwindigkeit
+    background_position -= player.speed * 6  # Hintergrundbewegungsgeschwindigkeit
 
-    # Gegner nach links bewegen
-    enemy_x -= enemy_speed
+    player.update()
+    enemy.update()
 
-    # Wenn Charakter springt
-    if jumping:
-        # Charakterposition aktualisieren
-        y_position -= y_velocity
-        y_velocity -= y_gravity
-        if y_position > 660:
-            jumping = False
-            y_position = 660
-
-    # Charakter nach rechts bewegen
-    x_position += character_speed
-
-    # Animation des Gegners
-    if pygame.time.get_ticks() - last_animation_time > animation_delay:
-        current_enemy_image_index = (current_enemy_image_index + 1) % len(enemy_images)
-        enemy_image = enemy_images[current_enemy_image_index]
-        last_animation_time = pygame.time.get_ticks()
-
-    # Animation des Spielers
-    if pygame.time.get_ticks() - last_player_animation_time > player_animation_delay:
-        current_player_image_index = (current_player_image_index + 1) % len(player_images)
-        player_image = player_images[current_player_image_index]
-        last_player_animation_time = pygame.time.get_ticks()
-
-   # Spieler auf dem Bildschirm anzeigen
-    player_rect = player_image.get_rect(center=(x_position, y_position))
-    screen.blit(player_image, player_rect)
-
-# Gegner auf dem Bildschirm anzeigen
-    enemy_rect = enemy_image.get_rect(center=(enemy_x, enemy_y))
-    screen.blit(enemy_image, enemy_rect)
+    player.draw(screen)
+    enemy.draw(screen)
 
     # Wenn Gegner den linken Bildschirmrand erreicht, setze ihn zufällig auf den rechten Rand
-    if enemy_x + enemy_image.get_width() < 0:
-        enemy_x = random.randint(800, 1600)
+    if enemy.x_position + enemy.image.get_width() < 0:
+        enemy.x_position = random.randint(800, 1600)
 
     # Kollisionsprüfung
-    check_collision()
+    if check_collision(player, enemy):
+        game_over = True
 
     # Pygame Fenster aktualisieren
     pygame.display.update()
