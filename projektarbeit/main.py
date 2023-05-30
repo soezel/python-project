@@ -75,9 +75,9 @@ class Enemy:
         screen.blit(self.image, enemy_rect)
 
 def check_collision(player, enemy):
-    player_rect = player.image.get_rect(center=(player.x_position, player.y_position))
-    enemy_rect = enemy.image.get_rect(center=(enemy.x_position, enemy.y_position))
-    if player_rect.right == enemy_rect.left or player_rect.left == enemy_rect.right:
+    player_rect = pygame.Rect(player.x_position + 15, player.y_position + 15, player.image.get_width() - 150, player.image.get_height() - 150)
+    enemy_rect = pygame.Rect(enemy.x_position + 15, enemy.y_position + 15, enemy.image.get_width() - 150, enemy.image.get_height() - 150)
+    if player_rect.colliderect(enemy_rect):
         return True
     return False
 
