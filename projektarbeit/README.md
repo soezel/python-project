@@ -2,8 +2,31 @@
 $\text{Selin \ und \ Tamara}$
 
 weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit
-# $$\text{Projektarbeit \ für \ das \ Game}$$
+# $$\text{Projektbeschreibung}$$
 --------------------------------------------------------------------
+## $$\text{Overview}$$
+
+Unser 2D Pixel Art Spiel ist zwar sehr simple aufgebaut, aber dafür reich an details. Sowohl die spielbaren Charatere, die Ingame Währung als auch die Gegner, Hintergrund etc. werden von uns illustiert und implementiert. 
+
+Unser Ziel ist es, alle unseren spielbaren Charakter auf interaktiver Art und weise, nach und nach freischalten zu können. 
+
+<p align="left">
+  <img src="projektarbeit/assets/luma.gif" height="100" width="100">
+  <img src="projektarbeit/assets/poop.gif" height="100" width="100">
+</p>
+
+--------------------------------------------------------------------
+## $$\text{Beschreibung}$$
+Unser Python Projekt soll ein simples Jump'n'Run im Pixel Style werden. 
+
+Wir haben uns insgesamt vier Charakter ausgedacht mit verschiedenen äußerlichen Features und Formen. Diese Charakter haben auch von uns Namen bekommen und werden von uns illustriert. 
+
+Die Gegner werden auch von uns illustiert, haben aber nicht so viel "Charaktertiefe" wie unsere spielbaren Charaktere. 
+
+Ingame Währung wollen wir auch einführen, umso die anderen Charaktere ansprechender gestalten zu können. 
+
+--------------------------------------------------------------------
+## $$\text{Stickpunkte}$$
 > $\text{Brainstorming}$
 + Game für Windows und Mac (pygame bzw pygame zero, Arcade)
 + executable mit freeze
@@ -33,3 +56,4 @@ weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/mai
 + siehe Screenshots
 + verschiedenfarbige Oktopoden mit anderen formen
 + endgegner ist Großes Herz
+
