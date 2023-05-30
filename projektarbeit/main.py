@@ -99,6 +99,7 @@ player = Player(x_position, y_position, 0.3)
 enemy = Enemy(random.randint(800, 1600), y_position)
 
 game_over = False
+score = 0
 
 # Endlosschleife
 while not game_over:
@@ -128,20 +129,31 @@ while not game_over:
     # Wenn Gegner den linken Bildschirmrand erreicht, setze ihn zufällig auf den rechten Rand
     if enemy.x_position + enemy.image.get_width() < 0:
         enemy.x_position = random.randint(800, 1600)
+        score += 1
 
     # Kollisionsprüfung
     if check_collision(player, enemy):
         game_over = True
 
+    # Punkte anzeigen
+    font = pygame.font.Font(None, 36)
+    score_text = font.render("Punkte: " + str(score), True, (255, 255, 255))
+    screen.blit(score_text, (10, 10))
+
     # Pygame Fenster aktualisieren
     pygame.display.update()
     clock.tick(60)
 
-# Spiel vorbei, zeige Game Over Nachricht
+# Spiel vorbei, zeige Game Over Nachricht und Punktzahl
 game_over_font = pygame.font.Font(None, 64)
 game_over_text = game_over_font.render("Game Over", True, (255, 0, 0))
-game_over_rect = game_over_text.get_rect(center=(400, 400))
+game_over_rect = game_over_text.get_rect(center=(500, 400))
 screen.blit(game_over_text, game_over_rect)
+
+score_text = font.render("Punkte: " + str(score), True, (255, 255, 255))
+score_rect = score_text.get_rect(center=(500, 500))
+screen.blit(score_text, score_rect)
+
 pygame.display.update()
 
 # Warte einige Sekunden, bevor das Spiel beendet wird
