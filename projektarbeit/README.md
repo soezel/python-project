@@ -12,7 +12,7 @@ Unser Ziel ist es, alle unseren spielbaren Charakter auf interaktiver Art und we
 
 <p align="left">
   <img src="projektarbeit/assets/luma1.png" height="100" width="100">
-  <img src="projektarbeit/assets/oktar1.gif" height="100" width="100">
+  <img src="projektarbeit/assets/oktar1.png" height="100" width="100">
 </p>
 
 --------------------------------------------------------------------
