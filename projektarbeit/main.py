@@ -107,6 +107,8 @@ while not game_over:
             pygame.quit()
             sys.exit()
 
+    background_speed = 6  # Hintergrundbewegungsgeschwindigkeit
+
     # Tasteneingaben abfragen
     keys_pressed = pygame.key.get_pressed()
 
@@ -114,10 +116,16 @@ while not game_over:
     if keys_pressed[pygame.K_SPACE]:
         player.jump()
 
+
     # Hintergrundbild darstellen und bewegen
-    screen.blit(background, (background_position % background_width - background_width, 0))
     screen.blit(background, (background_position % background_width, 0))
-    background_position -= player.speed * 6  # Hintergrundbewegungsgeschwindigkeit
+    screen.blit(background, ((background_position % background_width) - background_width, 0))
+    background_position -= background_speed
+
+    # # Hintergrundbild darstellen und bewegen
+    # screen.blit(background, (background_position % background_width - background_width, 0))
+    # screen.blit(background, (background_position % background_width, 0))
+    # background_position -= player.speed * 6  # Hintergrundbewegungsgeschwindigkeit
 
     player.update()
     enemy.update()
