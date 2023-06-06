@@ -1,19 +1,16 @@
 
 $\text{Selin \ und \ Tamara}$
 
-weitere updates auf dem repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit
+Weitere updates in dieser Projektarbeit auf dem Repo: https://github.com/myuzkii/python-project/tree/main/projektarbeit
 # $$\text{Projektbeschreibung}$$
 --------------------------------------------------------------------
 ## $$\text{Overview}$$
 
-Unser 2D Pixel Art Spiel ist zwar sehr simple aufgebaut, aber dafür reich an details. Sowohl die spielbaren Charatere, die Ingame Währung als auch die Gegner, Hintergrund etc. werden von uns illustiert und implementiert. 
+Unser 2D Pixel Art Spiel ist zwar sehr simple aufgebaut, aber dafür reich an details. Sowohl die spielbaren Charaktere, Ingame Währung als auch die Gegner, Hintergrund etc. werden von uns illustiert und implementiert. 
 
 Unser Ziel ist es, alle unseren spielbaren Charakter auf interaktiver Art und weise, nach und nach freischalten zu können. 
 
-<p align="left">
-  <img src="projektarbeit/assets/luma1.png" height="100" width="100">
-  <img src="projektarbeit/assets/oktar1.png" height="100" width="100">
-</p>
+Um die Charaktere, die schon illustriert worden sind zu sehen; unter projektarbeit/assets einsehbar.
 
 --------------------------------------------------------------------
 ## $$\text{Beschreibung}$$
