@@ -11,8 +11,8 @@ Unser 2D Pixel Art Spiel ist zwar sehr simple aufgebaut, aber dafür reich an de
 Unser Ziel ist es, alle unseren spielbaren Charakter auf interaktiver Art und weise, nach und nach freischalten zu können. 
 
 <p align="left">
-  <img src="projektarbeit/assets/luma.gif" height="100" width="100">
-  <img src="projektarbeit/assets/poop.gif" height="100" width="100">
+  <img src="projektarbeit/assets/luma1.png" height="100" width="100">
+  <img src="projektarbeit/assets/oktar1.gif" height="100" width="100">
 </p>
 
 --------------------------------------------------------------------
