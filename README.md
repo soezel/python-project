@@ -32,19 +32,19 @@
 
 > ⚖️ $\text{BMI \ Calculator} \ $
 <p align="center">
-  <img src="rechner_tkinter\assets\bmi.png" height="300" width="300">
+  <img src="rechner_tkinter/assets/bmi.png" height="300" width="300">
 </p>
 
 #
 > ➗ $\text{normal \ Calculator} \ $ 
 <p align="center">
-  <img src="rechner_tkinter\assets\taschenrechner.png" height="300" width="300">
+  <img src="rechner_tkinter/assets/taschenrechner.png" height="300" width="300">
 </p>
 
 #
 > ❤️ $\text{MatchMaker \ Calculator \ indexed \ by \ name}$
 <p align="center">
-  <img src="rechner_tkinter\assets\heart.png" height="300" width="300">
+  <img src="rechner_tkinter/assets/heart.png" height="300" width="300">
 </p>
 
 --------------------------------------------------------------------
@@ -52,5 +52,6 @@
 --------------------------------------------------------------------
 + 🔒 $\text{Password \ manager}$
 + 🍪 $\text{Cookie \ Clicker}$
++ 👾 $\text{Projektarbeit}$
 + $\text{...}$
 #
