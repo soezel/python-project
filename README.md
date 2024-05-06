@@ -47,11 +47,16 @@
   <img src="rechner_tkinter/assets/heart.png" height="300" width="300">
 </p>
 
+#
+> 🔒 $\text{Password \ manager}$
+
+#
+> 🍪 $\text{Cookie \ Clicker}$
+
+# 
+> 👾 $\text{Projektarbeit}$
 --------------------------------------------------------------------
 # $$\text{\color{lightgreen}To-Do ↓}$$ 
 --------------------------------------------------------------------
-+ 🔒 $\text{Password \ manager}$
-+ 🍪 $\text{Cookie \ Clicker}$
-+ 👾 $\text{Projektarbeit}$
 + $\text{...}$
 #
